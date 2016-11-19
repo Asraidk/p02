@@ -4,11 +4,15 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 
 public class ActivitatPrincipal extends AppCompatActivity implements View.OnClickListener{
 
+//http://www.vogella.com/tutorials/AndroidDragAndDrop/article.html
 
+    boolean bandera=false;
+    boolean informacio=false;
 
     //Clase para construir los botonos, es una clase generica que escucha que se ha
     //echo un click i luego pregunta quien es el responsable
@@ -19,6 +23,13 @@ public class ActivitatPrincipal extends AppCompatActivity implements View.OnClic
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_activitat_principal);
+
+            //buto canviar pantalla
+            Button btncanvi = (Button) findViewById(R.id.button2);
+            btncanvi.setOnClickListener(this);
+            //buto inici joc preguntas
+            Button jocPreguntes=(Button) findViewById(R.id.button3);
+            jocPreguntes.setOnClickListener(this);
 
             //instanciamos los 12 bottones con imagen
             ImageButton ibRouge = (ImageButton) findViewById(R.id.imageRouge);
@@ -45,6 +56,7 @@ public class ActivitatPrincipal extends AppCompatActivity implements View.OnClic
             ibWarlock.setOnClickListener(this);
             ImageButton ibWarriror = (ImageButton) findViewById(R.id.imageWarrior);
             ibWarriror.setOnClickListener(this);
+
         }
 
 
@@ -57,94 +69,117 @@ public class ActivitatPrincipal extends AppCompatActivity implements View.OnClic
             switch (v.getId()) {
 
                 case R.id.imageRouge:
-                    portadorInformacio.putString("claseTriada","picaro");
+                    portadorInformacio.putString("claseTriada","Picaro");
                     portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","http://www.google.com");
+                    portadorInformacio.putString("races","Elfo de la noche,Humano,Huergen,Gnomo,Enano,Pandaren");
+                    portadorInformacio.putString("descripcio","Orco,No-Muerto,Pandaren,Elfo de sangre,Troll,Goblin");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageDeathKnight:
-                    portadorInformacio.putString("claseTriada","hola");
-
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Caballero de la muerte");
+                    portadorInformacio.putString("rol","DPS,Tank");
+                    portadorInformacio.putString("races","Elfo de la noche,Humano,Huergen,Gnomo,Enano,Draenei");
+                    portadorInformacio.putString("descripcio","Orco,No-Muerto,Tauren,Elfo de sangre,Troll,Goblin");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageDemonHunter:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Cazador de demonios");
+                    portadorInformacio.putString("rol","DPS,Tank");
+                    portadorInformacio.putString("races","Elfo de la noche");
+                    portadorInformacio.putString("descripcio","Elfo de la sangre");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageDruid:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Druida");
+                    portadorInformacio.putString("rol","DPS,Tank,Heal");
+                    portadorInformacio.putString("races","Elfo de la noche,Huergen");
+                    portadorInformacio.putString("descripcio","Tauren,Troll");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageHunter:
-                    portadorInformacio.putString("claseTriada","hola");
+                    portadorInformacio.putString("claseTriada","Cazador");
                     portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("races","Enano,Gnomo,Humano,Elfo de la noche,Pandaren,Draenei,Huargen");
+                    portadorInformacio.putString("descripcio","Orco,No-Muerto,Tauren,Troll,Pandaren,Elfo de sangre,Goblin");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageMage:
-                    portadorInformacio.putString("claseTriada","hola");
+                    portadorInformacio.putString("claseTriada","Mago");
                     portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("races","Humano,Enano,Gnomo,Draenei,Huargen,Elfo de la noche,Pandaren");
+                    portadorInformacio.putString("descripcio","Pandaren,Goblin,Orco,No-Muerto,Troll,Elfo de sangre");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageMonk:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Monje");
+                    portadorInformacio.putString("rol","Dps,Tank,Heal");
+                    portadorInformacio.putString("races","Enano,Gnomo,Humano,Elfo de la noche,Pandaren,Draenei,Huargen");
+                    portadorInformacio.putString("descripcio","Orco,No-Muerto,Tauren,Troll,Pandaren,Elfo de sangre,Goblin");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imagePaladin:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Paladin");
+                    portadorInformacio.putString("rol","DPS,Heal,Tank");
+                    portadorInformacio.putString("races","Humano,Draenei,Enano");
+                    portadorInformacio.putString("descripcio","Tauren,Elfo de sangre");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imagePriest:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Sacerdote");
+                    portadorInformacio.putString("rol","DPS,Heal");
+                    portadorInformacio.putString("races","Draenei,Humano,Gnomo,Enano,Elfo de la noche,Pandaren,Huargen");
+                    portadorInformacio.putString("descripcio","Tauren,Troll,Elfo de sangre,Pandaren,No-Muerto,Goblin");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageShaman:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Chaman");
+                    portadorInformacio.putString("rol","Heal,DPS");
+                    portadorInformacio.putString("races","Draenei,Pandaren,Enano");
+                    portadorInformacio.putString("descripcio","Orco,Tauren,Troll,Pandaren");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageWarlock:
-                    portadorInformacio.putString("claseTriada","hola");
+                    portadorInformacio.putString("claseTriada","Brujo");
                     portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("races","Gnomo,Enano,Humano,Huargen");
+                    portadorInformacio.putString("descripcio","Oroc,No-Muerto,Troll,Goblin,Elfo de sangre");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
                 case R.id.imageWarrior:
-                    portadorInformacio.putString("claseTriada","hola");
-                    portadorInformacio.putString("rol","DPS");
-                    portadorInformacio.putString("races","DPS");
-                    portadorInformacio.putString("descripcio","DPS");
-                    portadorInformacio.putString("link","DPS");
+                    portadorInformacio.putString("claseTriada","Guerrero");
+                    portadorInformacio.putString("rol","DPS,Tank");
+                    portadorInformacio.putString("races","Humano,Enano,Elfo de la noche,Gnomo,Draenei,Huargen,Pandaren");
+                    portadorInformacio.putString("descripcio","Orco,No-Muerto,Tauren,Troll,Elfo de sangre,Goblin,Pandaren");
+                    portadorInformacio.putString("link","https://worldofwarcraft.com/es-es/");
+                    informacio=true;
                     break;
+                case R.id.button2:
+                    informacio=false;
+                    Intent intencio =new Intent(ActivitatPrincipal.this,ActivitatTercera.class);
+                    intencio.putExtras(portadorInformacio);
+                    startActivity(intencio);
+                    break;
+                case R.id.button3:
+                    bandera=true;
+                    break;
+
+
             }
+            if(informacio==true){
             Intent enviament = new Intent (ActivitatPrincipal.this,ActivitatSecundaria.class);
             enviament.putExtras(portadorInformacio);
-            startActivity(enviament);
+            startActivity(enviament);}
         }
 
 }

@@ -1,139 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="16dp"
     android:stretchColumns="1">
 
-    <TextView
-        android:text="Clases World of Warcraft"
-        android:textAlignment="center"
-        android:layout_height="25dip"
-        android:background="#FF909090"
-        android:layout_margin="16dp"
-        />
-
-    <TableRow
+   <!-- <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent">-->
 
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/rouge"
-            android:id="@+id/imageRouge"
-            android:layout_margin="5dp"
-            android:layout_column="0"/>
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="16dp"
+                android:stretchColumns="1">
+                <TextView
+                    android:text="Clases World of Warcraft"
+                    android:textAlignment="center"
+                    android:layout_height="25dip"
+                    android:background="#FF909090"
+                    android:layout_margin="16dp"
+                    />
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
 
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/dh"
-            android:id="@+id/imageDemonHunter"
-            android:layout_margin="5dp"
-            android:layout_column="1"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/druid"
-            android:id="@+id/imageDruid"
-            android:layout_margin="5dp"
-            android:layout_column="2"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/paladin"
-            android:id="@+id/imagePaladin"
-            android:layout_margin="5dp"
-            android:layout_column="3"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/rouge"
+                        android:id="@+id/imageRouge"
+                        android:layout_margin="5dp"
+                        android:layout_column="0"/>
 
-    </TableRow>
-
-    <View
-        android:layout_height="2dip"
-        android:background="#FF909090" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/mage"
-            android:id="@+id/imageMage"
-            android:layout_margin="5dp"
-            android:layout_column="0"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/monk"
-            android:id="@+id/imageMonk"
-            android:layout_margin="5dp"
-            android:layout_column="1"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/priest"
-            android:id="@+id/imagePriest"
-            android:layout_margin="5dp"
-            android:layout_column="2"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/warrior"
-            android:id="@+id/imageWarrior"
-            android:layout_margin="5dp"
-            android:layout_column="3"/>
-
-    </TableRow>
-
-    <View
-        android:layout_height="2dip"
-        android:background="#FF909090" />
-
-    <TableRow
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/warlock"
-            android:id="@+id/imageWarlock"
-            android:layout_margin="5dp"
-            android:layout_column="0"/>
-
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/hunter"
-            android:id="@+id/imageHunter"
-            android:layout_margin="5dp"
-            android:layout_column="1"/>
-
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/shaman"
-            android:id="@+id/imageShaman"
-            android:layout_margin="5dp"
-            android:layout_column="2"/>
-        <ImageButton
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            app:srcCompat="@drawable/dk"
-            android:id="@+id/imageDeathKnight"
-            android:layout_margin="5dp"
-            android:layout_column="2"/>
-
-    </TableRow>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/dh"
+                        android:id="@+id/imageDemonHunter"
+                        android:layout_margin="5dp"
+                        android:layout_column="1"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/druid"
+                        android:id="@+id/imageDruid"
+                        android:layout_margin="5dp"
+                        android:layout_column="2"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/dk"
+                        android:id="@+id/imageDeathKnight"
+                        android:layout_margin="5dp"
+                        android:layout_column="3"/>
 
 
+                </TableRow>
 
-    <View
-        android:layout_height="2dip"
-        android:background="#FF909090" />
+                <View
+                    android:layout_height="2dip"
+                    android:background="#FF909090" />
 
-</TableLayout>
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/mage"
+                        android:id="@+id/imageMage"
+                        android:layout_margin="5dp"
+                        android:layout_column="0"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/monk"
+                        android:id="@+id/imageMonk"
+                        android:layout_margin="5dp"
+                        android:layout_column="1"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/priest"
+                        android:id="@+id/imagePriest"
+                        android:layout_margin="5dp"
+                        android:layout_column="2"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/warrior"
+                        android:id="@+id/imageWarrior"
+                        android:layout_margin="5dp"
+                        android:layout_column="3"/>
+
+                </TableRow>
+
+                <View
+                    android:layout_height="2dip"
+                    android:background="#FF909090" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/warlock"
+                        android:id="@+id/imageWarlock"
+                        android:layout_margin="5dp"
+                        android:layout_column="0"/>
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/hunter"
+                        android:id="@+id/imageHunter"
+                        android:layout_margin="5dp"
+                        android:layout_column="1"/>
+
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/shaman"
+                        android:id="@+id/imageShaman"
+                        android:layout_margin="5dp"
+                        android:layout_column="2"/>
+                    <ImageButton
+                        android:layout_width="80dp"
+                        android:layout_height="80dp"
+                        app:srcCompat="@drawable/paladin"
+                        android:id="@+id/imagePaladin"
+                        android:layout_margin="5dp"
+                        android:layout_column="3"/>
+
+
+                </TableRow>
+
+                <View
+                    android:layout_height="2dip"
+                    android:background="#FF909090" />
+
+                <TableRow
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" >
+
+                    <Button
+                        android:text="Puzzle"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+
+                        android:id="@+id/button2" />
+                    <Button
+                        android:text="Adivina"
+                        android:layout_width="80dp"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/button3" />
+                </TableRow>
+            </TableLayout>
+        </HorizontalScrollView>
+
+    <!--</ScrollView>-->
+
+
+</RelativeLayout>
